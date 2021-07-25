@@ -6,4 +6,5 @@ body {
   background: #000;
   display: grid;
   place-items: center;
+  color: #fff;
 }

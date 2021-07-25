@@ -31,6 +31,18 @@ function App() {
           onMouseUp={(e) => handleSizeChange(e)}
           onTouchEnd={(e) => handleSizeChange(e)}
         />
+        <pre>
+          {`
+          .element{
+            box-shadow: 
+              0 0 ${size}px hsl(${hueValue},100%,30%), 
+              0 0 ${Math.floor(size / 1.5)}px hsl(${hueValue},100%,35%), 
+              0 0 ${Math.floor(size / 2)}px hsl(${hueValue},100%,45%), 
+              0 0 ${Math.floor(size / 2.5)}px hsl(${hueValue},100%,65%), 
+              0 0 ${Math.floor(size / 3)}px hsl(${hueValue},100%,85%), 
+              0 0 ${Math.floor(size / 3.5)}px hsl(${hueValue},100%,100%)
+          }`}
+        </pre>
       </SliderContainer>
       <Box hueValue={hueValue} size={size} />
     </AppContainer>
@@ -54,7 +66,7 @@ const SliderContainer = styled.div`
 `;
 const Slider = styled.input`
   width: 100%;
-  margin-top: 2rem;
+  margin-bottom: 2rem;
   background: transparent;
   -webkit-appearance: none;
   ::-webkit-slider-runnable-track {
@@ -92,11 +104,11 @@ const Box = styled.div`
   width: 300px;
   height: 50px;
   box-shadow: ${({ hueValue, size }) => `
-  0 0 ${size}px hsl(${hueValue},100%,40%),
-  0 0 ${Math.floor(size / 1.4)}px hsl(${hueValue},100%,50%),
-  0 0 ${Math.floor(size / 1.8)}px hsl(${hueValue},100%,60%),
-  0 0 ${Math.floor(size / 2.3)}px hsl(${hueValue},100%,70%),
-  0 0 ${Math.floor(size / 2.8)}px hsl(${hueValue},100%,85%),
-  0 0 ${Math.floor(size / 6.3)}px hsl(${hueValue},100%,100%)
+  0 0 ${size}px hsl(${hueValue},100%,30%),
+  0 0 ${Math.floor(size / 1.5)}px hsl(${hueValue},100%,35%),
+  0 0 ${Math.floor(size / 2)}px hsl(${hueValue},100%,45%),
+  0 0 ${Math.floor(size / 2.5)}px hsl(${hueValue},100%,65%),
+  0 0 ${Math.floor(size / 3)}px hsl(${hueValue},100%,85%),
+  0 0 ${Math.floor(size / 3.5)}px hsl(${hueValue},100%,100%)
   `};
 `;
