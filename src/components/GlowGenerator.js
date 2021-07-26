@@ -2,9 +2,9 @@ import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { CopyNotification, Slider, SliderContainer } from './StyledElements';
 
-const NeonGenerator = () => {
+const GlowGenerator = () => {
   const [hueValue, setHueValue] = useState(0);
-  const [size, setSize] = useState(20);
+  const [size, setSize] = useState(40);
   const [notificationText, setNotificationText] = useState('');
   const codeRef = useRef();
 
@@ -18,14 +18,14 @@ const NeonGenerator = () => {
   const handleCopy = () => {
     console.log(codeRef);
     navigator.clipboard.writeText(codeRef.current.innerText);
-    setNotificationText('Copyied to clipboard');
+    setNotificationText('Copied to clipboard');
     setTimeout(() => {
       setNotificationText('');
     }, 2000);
   };
 
   return (
-    <NeonContainer>
+    <GlowContainer>
       <SliderContainer>
         <h2>color</h2>
         <Slider
@@ -41,7 +41,8 @@ const NeonGenerator = () => {
         <Slider
           type='range'
           min='5'
-          max='100'
+          max='200'
+          defaultValue={50}
           onMouseUp={(e) => handleSizeChange(e)}
           onTouchEnd={(e) => handleSizeChange(e)}
         />
@@ -49,25 +50,23 @@ const NeonGenerator = () => {
       <CodeContainer hueValue={hueValue} size={size} onClick={handleCopy}>
         <pre ref={codeRef}>
           {`
-                0 0 ${size}px hsl(${hueValue},100%,40%),
-                0 0 ${Math.floor(size / 1.5)}px hsl(${hueValue},100%,50%), 
-                0 0 ${Math.floor(size / 2)}px hsl(${hueValue},100%,65%), 
-                0 0 ${Math.floor(size / 2.5)}px hsl(${hueValue},100%,80%), 
-                0 0 ${Math.floor(size / 3)}px hsl(${hueValue},100%,90%), 
-                0 0 ${Math.floor(size / 3.5)}px hsl(${hueValue},100%,100%);
+                0 0 ${size * 2}px hsl(${hueValue},100%,40%),
+                0 0 ${size}px hsl(${hueValue},100%,50%), 
+                0 0 ${Math.floor(size / 2)}px hsl(${hueValue},100%,60%),
+                0 0 ${size * 2}px #ffffff50;
               `}
         </pre>
       </CodeContainer>
       <CopyNotification notificationText={notificationText}>
         <p>{notificationText}</p>
       </CopyNotification>
-    </NeonContainer>
+    </GlowContainer>
   );
 };
 
-export default NeonGenerator;
+export default GlowGenerator;
 
-const NeonContainer = styled.div`
+const GlowContainer = styled.div`
   flex: 0.6;
   max-width: 500px;
   padding: 1rem;
@@ -75,22 +74,23 @@ const NeonContainer = styled.div`
 
 const CodeContainer = styled.div`
   background: #ffffff10;
-  padding: 1rem;
-  opacity: 0.9;
+  border-radius: 0.5rem;
+  margin-top: 3rem;
   box-shadow: ${({ hueValue, size }) => `
-  0 0 ${size}px hsl(${hueValue},100%,40%),
-  0 0 ${Math.floor(size / 1.5)}px hsl(${hueValue},100%,50%),
-  0 0 ${Math.floor(size / 2)}px hsl(${hueValue},100%,65%),
-  0 0 ${Math.floor(size / 2.5)}px hsl(${hueValue},100%,80%),
-  0 0 ${Math.floor(size / 3)}px hsl(${hueValue},100%,90%),
-  0 0 ${Math.floor(size / 3.5)}px hsl(${hueValue},100%,100%)
+  0 0 ${size * 2}px  hsl(${hueValue},100%,40%),
+  0 0 ${size}px hsl(${hueValue},100%,50%),
+  0 0 ${size / 2}px hsl(${hueValue},100%,60%),
+  0 0 ${size * 2}px #ffffff50
+  
   `};
-  :hover {
-    cursor: pointer;
-    opacity: 1;
-  }
+
   > pre {
+    padding: 1rem;
     display: block;
     white-space: pre-line;
+    :hover {
+      cursor: pointer;
+      background: #ffffff10;
+    }
   }
 `;

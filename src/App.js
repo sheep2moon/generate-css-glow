@@ -1,12 +1,12 @@
 import './App.css';
 import styled from 'styled-components';
-import NeonGenerator from './components/NeonGenerator';
+import GlowGenerator from './components/GlowGenerator';
 import Hero from './components/Hero';
 function App() {
   return (
     <AppContainer>
       <Hero />
-      <NeonGenerator />
+      <GlowGenerator />
     </AppContainer>
   );
 }

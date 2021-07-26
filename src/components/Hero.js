@@ -4,11 +4,9 @@ import styled from 'styled-components';
 const Hero = () => {
   return (
     <HeroContainer>
-      <Title>Neon Generator</Title>
+      <Title>Glow Generator</Title>
       <Info>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-        corporis beatae dolor voluptatem neque eum fugit sapiente iste ad
-        consequatur.
+        Generate CSS box-shadow or text-shadow code to create glow effect.
       </Info>
     </HeroContainer>
   );
@@ -29,17 +27,19 @@ const HeroContainer = styled.div`
 const Title = styled.h1`
   text-align: center;
   font-size: 4rem;
-  animation: neon 8s ease-in-out infinite;
-  font-weight: 700;
-  color: transparent;
-  font-family: 'Orbitron', sans-serif;
+  font-weight: 200;
+  color: #ffeb52;
+  font-family: 'Orbitron';
   margin-bottom: 2rem;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ffd644, 0 0 0.5em #ffd644,
+    0 0 0.1em #ffd644, 0 10px 3px #000;
   @media screen and (max-width: 900px) {
     font-size: 2.5rem;
   }
 `;
 const Info = styled.p`
   text-align: center;
+  font-size: 1.4rem;
   padding: 1rem;
-  max-width: 400px;
+  max-width: 500px;
 `;

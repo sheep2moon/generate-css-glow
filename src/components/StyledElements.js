@@ -7,7 +7,7 @@ export const SliderContainer = styled.div`
 `;
 export const Slider = styled.input`
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   background: transparent;
   -webkit-appearance: none;
   ::-webkit-slider-runnable-track {

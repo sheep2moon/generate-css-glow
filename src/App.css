@@ -12,20 +12,3 @@ body {
   color: #fff;
   font-family: 'Source Sans Pro', sans-serif;
 }
-@keyframes neon {
-  0% {
-    text-shadow: 0 0 5px hsl(78, 100%, 40%), 0 0 3px hsl(78, 100%, 50%),
-      0 0 2px hsl(78, 100%, 65%), 0 0 2px hsl(78, 100%, 80%),
-      0 0 1px hsl(78, 100%, 90%), 0 0 1px hsl(78, 100%, 100%);
-  }
-  50% {
-    text-shadow: 0 0 5px hsl(52, 100%, 40%), 0 0 3px hsl(52, 100%, 50%),
-      0 0 2px hsl(52, 100%, 65%), 0 0 2px hsl(52, 100%, 80%),
-      0 0 1px hsl(52, 100%, 90%), 0 0 1px hsl(52, 100%, 100%);
-  }
-  100% {
-    text-shadow: 0 0 5px hsl(78, 100%, 40%), 0 0 3px hsl(78, 100%, 50%),
-      0 0 2px hsl(78, 100%, 65%), 0 0 2px hsl(78, 100%, 80%),
-      0 0 1px hsl(78, 100%, 90%), 0 0 1px hsl(78, 100%, 100%);
-  }
-}
