@@ -49,7 +49,7 @@ const GlowGenerator = () => {
       </SliderContainer>
       <CodeContainer hueValue={hueValue} size={size} onClick={handleCopy}>
         <pre ref={codeRef}>
-          {`
+          {`box-shadow:
                 0 0 ${size * 2}px hsl(${hueValue},100%,40%),
                 0 0 ${size}px hsl(${hueValue},100%,50%), 
                 0 0 ${Math.floor(size / 2)}px hsl(${hueValue},100%,60%),

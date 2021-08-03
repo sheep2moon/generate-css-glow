@@ -18,7 +18,7 @@ const AppContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: #090909;
   @media screen and (max-width: 600px) {
     flex-direction: column;
   }
